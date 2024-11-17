@@ -20,16 +20,4 @@ public class Dealer extends Player {
 	}
 	
 	
-//	Card c = dealer.dealCard();
-//	player.hit(c);
-	
-	
-	
-	
-	
-	
-	//NO getDeck()
-	
-	
-
 }

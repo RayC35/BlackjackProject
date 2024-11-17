@@ -33,6 +33,4 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 	
-	//NO getCards(){}
-	
 }

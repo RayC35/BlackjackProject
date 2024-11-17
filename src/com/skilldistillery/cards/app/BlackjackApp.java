@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.skilldistillery.cards.blackjack.Dealer;
 import com.skilldistillery.cards.blackjack.Player;
+//import com.skilldistillery.cards.common.Card;
 
 public class BlackjackApp {
 
@@ -31,7 +32,8 @@ public class BlackjackApp {
 			
 		if (response.equalsIgnoreCase("y") || (response.equalsIgnoreCase("yes"))) {
 			initialHands();
-			keepGoing = false;
+			System.out.println();
+//			keepGoing = false;
 		}
 		else if (response.equalsIgnoreCase("n") || (response.equalsIgnoreCase("no"))) {
 			System.out.println("Another time then...");
@@ -49,9 +51,12 @@ public class BlackjackApp {
 		player.hit(dealer.dealCard());
 		dealer.hit(dealer.dealCard());
 		
-//		displayHand(player, "Your hand: ");
-//		displayHand(dealer, "The dealer's hand: ");
+		System.out.println("Your hand: ");
+		player.displayHand();
+		System.out.println(player.getHandValue());
+		System.out.println("Dealer's hand: ");
+		dealer.displayHand();
+		System.out.println(dealer.getHandValue());
 	}
-	
-	
 }
+	

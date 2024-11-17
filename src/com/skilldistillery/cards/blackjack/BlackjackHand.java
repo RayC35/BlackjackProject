@@ -12,7 +12,7 @@ public class BlackjackHand extends AbstractHand {
 //		hand.addCard(new Card(Rank.TEN, Suit.SPADES));
 //		hand.addCard(new Card(Rank.ACE, Suit.SPADES));
 //		hand.addCard(new Card(Rank.JACK, Suit.SPADES));
-//		System.out.println(hand.isBust());
+//		System.out.println(displayHand());
 //	}	
 	
 	//No fields
@@ -34,7 +34,6 @@ public class BlackjackHand extends AbstractHand {
 			return true;
 	}
 			
-	
 	public boolean isBust() {
 		if (getHandValue() > 21) {
 			System.out.println("Over! You lose!");
@@ -42,5 +41,10 @@ public class BlackjackHand extends AbstractHand {
 			return true;
 	}
 	
+	public void displayHand() {
+		for (Card card : cardsInHand) {
+			System.out.println(card);
+		}
+	}
 
 }

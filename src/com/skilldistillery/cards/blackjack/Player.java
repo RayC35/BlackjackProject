@@ -4,10 +4,8 @@ import com.skilldistillery.cards.common.Card;
 
 public class Player {
 	
-	//fields
 	protected BlackjackHand hand;
 	
-	//No List<card>
 	 public Player() {
 		 hand = new BlackjackHand();
 	 }
@@ -15,13 +13,11 @@ public class Player {
 	 public void hit(Card card) {
 		 hand.addCard(card);
 	 }
-	 
-	 
-
-	 //NO getHand()
-	 
-	 
-	 
-	 
-	 
+	 public void displayHand() {
+		 hand.displayHand();
+	 }
+	 public int getHandValue() {
+		 return hand.getHandValue();
+	 }
+		 
 }
