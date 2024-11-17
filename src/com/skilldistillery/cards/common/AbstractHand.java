@@ -5,10 +5,14 @@ import java.util.List;
 
 public abstract class AbstractHand {
 	
+//	public static void main(String[] args) {
+//	}
+	
 	protected List<Card> cardsInHand;
 	
 	public AbstractHand() {
 		cardsInHand = new ArrayList<>();
+
 	}
 	
 	public abstract int getHandValue();
@@ -17,4 +21,8 @@ public abstract class AbstractHand {
 		cardsInHand.add(card);
 	}
 
+	
+	
+	
+	
 }

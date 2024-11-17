@@ -24,7 +24,34 @@ public class BlackjackApp {
 	}
 	
 	public void startGame() {
-		
+		boolean keepGoing = true;
+		while (keepGoing) {
+			System.out.println("How about a game of blackjack? Y/N?");
+			String response = kb.nextLine();
+			
+		if (response.equalsIgnoreCase("y") || (response.equalsIgnoreCase("yes"))) {
+			initialHands();
+			keepGoing = false;
+		}
+		else if (response.equalsIgnoreCase("n") || (response.equalsIgnoreCase("no"))) {
+			System.out.println("Another time then...");
+			keepGoing = false;
+		}
+		else {
+			System.out.println("Invalid response. Stop messing around.\n");
+		}
 	}
+}
+	public void initialHands() {
+		dealer.shuffle();
+		player.hit(dealer.dealCard());
+		dealer.hit(dealer.dealCard());
+		player.hit(dealer.dealCard());
+		dealer.hit(dealer.dealCard());
+		
+//		displayHand(player, "Your hand: ");
+//		displayHand(dealer, "The dealer's hand: ");
+	}
+	
 	
 }

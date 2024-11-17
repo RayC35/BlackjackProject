@@ -13,7 +13,19 @@ public class Dealer extends Player {
 	
 	public Card dealCard() {
 		return deck.dealCard();
+	} 
+	
+	public void shuffle() {
+		deck.shuffle();
 	}
+	
+	
+//	Card c = dealer.dealCard();
+//	player.hit(c);
+	
+	
+	
+	
 	
 	
 	//NO getDeck()

@@ -15,6 +15,8 @@ public class Player {
 	 public void hit(Card card) {
 		 hand.addCard(card);
 	 }
+	 
+	 
 
 	 //NO getHand()
 	 
