@@ -58,5 +58,38 @@ public class BlackjackApp {
 		dealer.displayHand();
 		System.out.println(dealer.getHandValue());
 	}
+	
+	private void playerTurn() {
+		boolean playerTurn = true;
+//		
+		while(playerTurn) {
+//			System.out.println("Current hand: ");
+//			player.displayHand();
+			System.out.println("Would you like to hit or stand?");
+			String response = kb.nextLine().toLowerCase();
+			
+			if(response.equals("hit")) {
+				player.hit(dealer.dealCard());
+				System.out.println("You drew: " + player.getLastCard());
+				System.out.println(player.getHandValue());
+				playerTurn = true;
+				System.out.println();
+			}
+			if (player.getHandValue() > 21) {
+				System.out.println("Bust! You lose!");
+				playerTurn = false;
+			}
+			else if (response.equals("stand")) {
+			System.out.println("You chose to stand.");
+			playerTurn = false;
+			}
+//			else {
+//				System.out.println("Invalid response. 'Hit' or 'Stand'? ");
+//			}
+		}
+	}
+
+	
+	
 }
 	

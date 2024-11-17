@@ -19,5 +19,9 @@ public class Player {
 	 public int getHandValue() {
 		 return hand.getHandValue();
 	 }
+	 
+	 public Card getLastCard() {
+		 return hand.getCards().get(hand.getCards().size() - 1);
+	 }
 		 
 }

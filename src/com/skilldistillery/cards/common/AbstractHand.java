@@ -18,5 +18,9 @@ public abstract class AbstractHand {
 		cardsInHand.add(card);
 	}
 	
+	public List<Card> getCards() {
+		return new ArrayList<>(cardsInHand);
+	}
+
 	
 }
