@@ -63,7 +63,7 @@ public class BlackjackApp {
 		boolean playerTurn = true;
 //		
 		while(playerTurn) {
-//			System.out.println("Current hand: ");
+			System.out.println("Current hand: ");
 //			player.displayHand();
 			System.out.println("Would you like to hit or stand?");
 			String response = kb.nextLine().toLowerCase();
@@ -88,6 +88,22 @@ public class BlackjackApp {
 //			}
 		}
 	}
+	
+	public void dealerTurn() {
+//		if (dealer.getHandValue() < 17) {
+//			System.out.println("Dealer hits...");
+//			player.hit(dealer.dealCard());
+//		}
+//		else if (dealer.getHandValue() > 21) {
+//			System.out.println("");
+//		}
+		while (dealer.getHandValue() < 17) {
+			System.out.println("Dealer hits...");
+			dealer.hit(dealer.dealCard());
+		}
+		System.out.println("Dealer stands with: " + dealer.getHandValue());
+	}
+	
 
 	
 	
