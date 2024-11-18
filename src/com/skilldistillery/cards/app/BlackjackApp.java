@@ -29,9 +29,13 @@ public class BlackjackApp {
 		while (keepGoing) {
 			System.out.println("How about a game of blackjack? Y/N?");
 			String response = kb.nextLine();
+			System.out.println();
 			
 		if (response.equalsIgnoreCase("y") || (response.equalsIgnoreCase("yes"))) {
 			initialHands();
+			playerTurn();
+			dealerTurn();
+			whoWins();
 			System.out.println();
 //			keepGoing = false;
 		}
@@ -51,19 +55,25 @@ public class BlackjackApp {
 		player.hit(dealer.dealCard());
 		dealer.hit(dealer.dealCard());
 		
+		//why can't I combine these two lines below?
 		System.out.println("Your hand: ");
 		player.displayHand();
-		System.out.println(player.getHandValue());
+		System.out.println(player.getHandValue() + "\n");
+		
+//		if (player.getHandValue() == 21) {
+//			player.isBlackjack();
+//		}
+		
 		System.out.println("Dealer's hand: ");
 		dealer.displayHand();
-		System.out.println(dealer.getHandValue());
+		System.out.println(dealer.getHandValue() + "\n");
 	}
 	
 	private void playerTurn() {
 		boolean playerTurn = true;
 //		
 		while(playerTurn) {
-			System.out.println("Current hand: ");
+//			System.out.println("Current hand: ");
 //			player.displayHand();
 			System.out.println("Would you like to hit or stand?");
 			String response = kb.nextLine().toLowerCase();
@@ -104,8 +114,24 @@ public class BlackjackApp {
 		System.out.println("Dealer stands with: " + dealer.getHandValue());
 	}
 	
-
-	
-	
-}
-	
+	public void whoWins() {
+		int playerValue = player.getHandValue();
+		int dealerValue = dealer.getHandValue();
+		
+		if (playerValue > 21) {
+			System.out.println("Player busts! Dealer wins. Too bad, maybe next time.");
+		}
+		else if (dealerValue > 21) {
+			System.out.println("Dealer busts! Player wins. Congratulations!");
+		}
+		else if (playerValue > dealerValue) {
+			System.out.println("Player wins with: " + playerValue + ". Way to go!");
+		}
+		else if (playerValue < dealerValue) {
+			System.out.println("Dealer wins with: " + dealerValue + ". Too bad, maybe next time.");
+		}
+		else {
+			System.out.println("Push! Both dealer and player have: " + playerValue + ", no winner.");
+		}
+	}
+	}
