@@ -27,5 +27,12 @@ public class Player {
 	 public void clearHand() {
 		 hand.removeCards();
 	 }
+	 
+	 public void blackJackCheck() {
+		 hand.isBlackjack();
+	 }
+	 public void over21() {
+		 hand.isBust();
+	 }
 		 
 }
