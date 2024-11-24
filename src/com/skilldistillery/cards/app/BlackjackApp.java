@@ -63,8 +63,8 @@ public class BlackjackApp {
 		
 		
 		System.out.println("Dealer's hand: ");
-		dealer.displayHand();
-		System.out.println(dealer.getHandValue() + "\n");
+		System.out.println(dealer.getLastCard());
+		System.out.println(dealer.getLastCard().getValue());
 		
 	}
 	
