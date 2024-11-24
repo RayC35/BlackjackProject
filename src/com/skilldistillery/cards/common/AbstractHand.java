@@ -21,6 +21,10 @@ public abstract class AbstractHand {
 	public List<Card> getCards() {
 		return new ArrayList<>(cardsInHand);
 	}
+	
+	public void removeCards() {
+		cardsInHand.clear();
+	}
 
 	
 }

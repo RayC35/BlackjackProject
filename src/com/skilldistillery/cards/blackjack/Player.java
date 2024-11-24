@@ -23,5 +23,9 @@ public class Player {
 	 public Card getLastCard() {
 		 return hand.getCards().get(hand.getCards().size() - 1);
 	 }
+	 
+	 public void clearHand() {
+		 hand.removeCards();
+	 }
 		 
 }
