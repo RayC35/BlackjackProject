@@ -15,7 +15,6 @@ public class BlackjackHand extends AbstractHand {
 //		System.out.println(displayHand());
 //	}	
 	
-	//No fields
 	
 	@Override
 	public int getHandValue() {

@@ -40,7 +40,6 @@ public class BlackjackApp {
 				dealerTurn();
 				whoWins();
 				System.out.println();
-//				keepGoing = false;
 			}
 		}
 		else if (response.equalsIgnoreCase("n") || (response.equalsIgnoreCase("no"))) {
@@ -94,7 +93,7 @@ public class BlackjackApp {
 					System.out.println();
 					}
 				if (player.getHandValue() > 21) {
-					System.out.println("Bust! You lose!");
+//					System.out.println("Bust! You lose!");
 					playerTurn = false;
 					}
 				else if (response.equals("stand")) {
@@ -115,8 +114,11 @@ public class BlackjackApp {
 			dealersTurn = false;
 		}
 		else if (player.getHandValue() <= 21) {
-		
+		//FIX DEALER STANDS IF D BUSTS, GO STRAIGHT TO WHOWINS(). NEW BOOLEAN IN WHILE?
 			while (dealer.getHandValue() < 17) {
+				if (dealer.getHandValue() > 21) {
+					dealersTurn = false;
+				}
 				System.out.println("Dealer hits...");
 				dealer.hit(dealer.dealCard());
 				System.out.println("Dealer draws: " + dealer.getLastCard());
@@ -150,15 +152,15 @@ public class BlackjackApp {
 	
 	public void initialCheck() {
 		if (player.getHandValue() == 21 && dealer.getHandValue() != 21) {
-			System.out.println("Player has blackjack!"); 
+			System.out.println("Player wins!"); 
 		}
 		else if (dealer.getHandValue() == 21 && player.getHandValue() != 21) {
-			System.out.println("Dealer has blackjack!");
+			System.out.println("Dealer wins!");
 			}
 		else if (player.getHandValue() == 21 && dealer.getHandValue() == 21) {
 			System.out.println("Both dealer and player have blackjack! It's a push!");
 		}
-			
+		System.out.println();	
 	}
 	
 	public void newGame() {
